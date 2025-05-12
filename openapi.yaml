@@ -1,0 +1,36 @@
+
+openapi: 3.0.0
+info:
+  title: XLS Reader API
+  version: 1.0.0
+paths:
+  /read-xls/:
+    post:
+      summary: Upload XLS and return table
+      operationId: readXls
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+servers:
+  - url: https://xls-reader-api.onrender.com
