@@ -33,4 +33,4 @@ paths:
                     items:
                       type: object
 servers:
-  - url: https://xls-reader-api.onrender.com
+  - url: https://xls-api-openai.onrender.com
